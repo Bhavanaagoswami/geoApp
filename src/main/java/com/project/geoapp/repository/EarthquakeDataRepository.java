@@ -27,7 +27,7 @@ public interface EarthquakeDataRepository extends JpaRepository<EarthquakeData,I
             "    RANK() OVER (ORDER BY magnitude DESC) AS magnitude_rank\n" +
             "    FROM EarthquakeData\n" +
             "    GROUP BY magnitude\n" +
-            ") \n" +
+            ") subquery\n" +
             "WHERE magnitude_rank <= 5\n" +
             "ORDER BY magnitude_rank", nativeQuery = true)
     List<HightestEarthquakeData> getTopFiveEarthquakeData();

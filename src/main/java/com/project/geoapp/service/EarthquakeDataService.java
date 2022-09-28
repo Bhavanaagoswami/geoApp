@@ -114,15 +114,15 @@ public class EarthquakeDataService {
         }
         List<Point> points = geometry.getPoints();
         EarthquakeAggregate earthquakeDataListPerYear = getEarthquakeDataPerYear(year);
-        earthquakeDataListPerYear.getEarthquakeDataList().stream().forEach( e->{
-            DecimalFormat decimalFormatter = new DecimalFormat("#.##");
-            decimalFormatter.setRoundingMode(RoundingMode.UP);
-            boolean locationMatchesWithCountry = points.stream().anyMatch(p->p.getLatitude().equals(Double.valueOf(decimalFormatter.format(e.getLatitude())))
-                    && p.getLongitude().equals(Double.valueOf(decimalFormatter.format(e.getLongitude()))));
-            if(locationMatchesWithCountry){
-                earthquakeDataList.add(e);
-            }
-        });
+            earthquakeDataListPerYear.getEarthquakeDataList().stream().forEach( e->{
+                DecimalFormat decimalFormatter = new DecimalFormat("#.##");
+                decimalFormatter.setRoundingMode(RoundingMode.UP);
+                boolean locationMatchesWithCountry = points.stream().anyMatch(p->p.getLatitude().equals(Double.valueOf(decimalFormatter.format(e.getLatitude())))
+                        && p.getLongitude().equals(Double.valueOf(decimalFormatter.format(e.getLongitude()))));
+                if(locationMatchesWithCountry){
+                    earthquakeDataList.add(e);
+                }
+            });
         earthquakeAggregate.setEarthquakeDataList(earthquakeDataList);
         return earthquakeAggregate;
     }
