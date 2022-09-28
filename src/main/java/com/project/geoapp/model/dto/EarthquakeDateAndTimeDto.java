@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Setter
 @Getter
-public class EarthquackDateAndTimeDto {
+public class EarthquakeDateAndTimeDto {
     private List<LocalDate> dates;
     private List<LocalTime> times;
 }

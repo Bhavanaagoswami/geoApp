@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.geoapp.model.Countries;
 import com.project.geoapp.model.CountriesAggregate;
 import com.project.geoapp.repository.CountriesRepository;
-import com.project.geoapp.repository.EarthquackDataRepository;
+import com.project.geoapp.repository.EarthquakeDataRepository;
 import org.springframework.data.mapping.context.PersistentEntities;
 import org.springframework.data.rest.webmvc.json.DomainObjectReader;
 import org.springframework.data.rest.webmvc.mapping.Associations;
@@ -19,18 +19,18 @@ import java.util.stream.Collectors;
 public class CountriesDataService {
     private final CountriesRepository countriesRepository;
 
-    private final EarthquackDataRepository earthquackDataRepository;
+    private final EarthquakeDataRepository earthquakeDataRepository;
 
     private final DomainObjectReader domainObjectReader;
     private final ObjectMapper objectMapper;
 
     public CountriesDataService(CountriesRepository countriesRepository,
-                                EarthquackDataRepository earthquackDataRepository,
+                                EarthquakeDataRepository earthquakeDataRepository,
                                 ObjectMapper objectMapper,
                                 PersistentEntities persistentEntities,
                                 Associations associationLinks) {
         this.countriesRepository = countriesRepository;
-        this.earthquackDataRepository = earthquackDataRepository;
+        this.earthquakeDataRepository = earthquakeDataRepository;
         this.domainObjectReader = new DomainObjectReader(persistentEntities, associationLinks);
         this.objectMapper = objectMapper;
     }

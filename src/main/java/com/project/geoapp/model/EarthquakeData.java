@@ -15,8 +15,8 @@ import java.time.LocalTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="earthquackdata")
-public class EarthquackData implements Serializable {
+@Table(name="earthquakedata")
+public class EarthquakeData implements Serializable {
     @Id
     @GeneratedValue(generator ="sequence-generator")
     @GenericGenerator(name="sequence-generator",strategy ="org.hibernate.id.enhanced.SequenceStyleGenerator",

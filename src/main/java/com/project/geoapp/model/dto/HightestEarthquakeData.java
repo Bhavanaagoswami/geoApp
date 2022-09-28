@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HightestEarthquackData {
+public class HightestEarthquakeData {
 
-    private Long earthquackCount;
+    private Long earthquakeCount;
     private double magnitude;}

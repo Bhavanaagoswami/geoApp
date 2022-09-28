@@ -9,7 +9,7 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
-public class EarthquackAggregate {
+public class EarthquakeAggregate {
 
-    private List<EarthquackData> earthquackDataList;
+    private List<EarthquakeData> earthquakeDataList;
 }
